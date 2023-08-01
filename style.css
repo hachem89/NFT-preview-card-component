@@ -1,0 +1,159 @@
+:root{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ background-color: var(--Very-dark-blue-main-BG);
+  min-height: 100vh;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-container{
+    background-color: var(--Very-dark-blue-card-BG);
+    border-radius: 10px;
+    padding: 25px 25px 10px;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0,0.2) -10px 10px 15px;
+}
+
+.image-container{
+    position: relative;
+    margin-bottom: 20px;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.image-container::before{
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: var(--Cyan);
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+.image-container:hover::before{
+    opacity: 0.6;
+}
+
+.image-container:hover .view-icon{
+    opacity: 1;
+}
+
+.view-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+.equilibrium-image{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.card-container h3{
+    color: var(--White);
+    margin-bottom: 17px;
+    cursor: pointer;
+}
+
+.card-container h3:hover{
+    color: var(--Cyan);
+}
+
+.card-container p{
+    color: var(--Soft-blue);
+    font-weight: 300;
+}
+
+.ethereum-info-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.amount-of-ethereum,.time-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.amount-of-ethereum p{
+    color: var(--Cyan);
+    font-weight: 400;
+}
+
+.time-left p, .creator-container p{
+    font-size: 14px;
+}
+
+.ethereum-info-container img{
+    height: 15px;
+}
+
+.card-container hr{
+    border: none;
+    height: 1px;
+    background-color: var(--Very-dark-blue-line);
+}
+
+.creator-container{
+ display: flex;
+  align-items: center; 
+  margin: 15px 0;
+  gap: 15px; 
+}
+
+.creator-container img{
+    height: 30px;
+    border: 1px var(--White) solid;
+    border-radius: 50%;
+}
+
+.creator-container p a{
+    color: var(--White);
+    text-decoration: none;
+}
+
+.creator-container p a:hover{
+    color: var(--Cyan);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+.attribution a {
+  color: white;
+}
